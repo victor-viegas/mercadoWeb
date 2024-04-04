@@ -1,6 +1,7 @@
 package model.bean;
 
-public class userDTO {
+public class UserDTO {
+    private int idUser;
     private String name;
     private String user;
     private String password;
@@ -8,16 +9,25 @@ public class userDTO {
     private String phone;
     private String birthDate;
 
-    public userDTO() {
+    public UserDTO() {
     }
 
-    public userDTO(String name, String user, String password, String cpf, String phone, String birthDate) {
+    public UserDTO(int idUser, String name, String user, String password, String cpf, String phone, String birthDate) {
+        this.idUser = idUser;
         this.name = name;
         this.user = user;
         this.password = password;
         this.cpf = cpf;
         this.phone = phone;
         this.birthDate = birthDate;
+    }
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 
     public String getName() {
