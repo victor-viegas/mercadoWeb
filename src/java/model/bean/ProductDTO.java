@@ -1,18 +1,17 @@
 package model.bean;
 
-import java.sql.Blob;
-
 public class ProductDTO {
+
     private int idProduct;
     private int categoryId;
     private String name;
-    private Blob image;
+    private byte[] image;
     private float price;
 
     public ProductDTO() {
     }
 
-    public ProductDTO(int idProduct, int categoryId, String name, Blob image, float price) {
+    public ProductDTO(int idProduct, int categoryId, String name, byte[] image, float price) {
         this.idProduct = idProduct;
         this.categoryId = categoryId;
         this.name = name;
@@ -44,11 +43,11 @@ public class ProductDTO {
         this.name = name;
     }
 
-    public Blob getImage() {
+    public byte[] getImage() {
         return image;
     }
 
-    public void setImage(Blob image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 
@@ -59,5 +58,5 @@ public class ProductDTO {
     public void setPrice(float price) {
         this.price = price;
     }
-    
+
 }
