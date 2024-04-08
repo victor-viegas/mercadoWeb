@@ -12,7 +12,7 @@ import model.bean.ProductDTO;
 public class ProductDAO {
 
     public List<ProductDTO> read() {
-        List<ProductDTO> produtos = new ArrayList<>();
+        List<ProductDTO> products = new ArrayList<>();
         String sql = "SELECT * FROM produtos";
         try {
             Connection connection = ConnectionDB.connect();
@@ -27,7 +27,7 @@ public class ProductDAO {
                 objProduct.setPrice(rs.getFloat("valor"));
                 objProduct.setCategoryId(rs.getInt("categoria_id"));
                 objProduct.setImage(rs.getBytes("imagem"));
-                produtos.add(objProduct);
+                products.add(objProduct);
             }
             rs.close();
             stmt.close();
@@ -35,6 +35,6 @@ public class ProductDAO {
         } catch (SQLException e) {
             System.out.println("Leitura de produtos: " + e);
         }
-        return produtos;
+        return products;
     }
 }
