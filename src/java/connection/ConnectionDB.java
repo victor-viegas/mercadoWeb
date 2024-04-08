@@ -6,15 +6,15 @@ import java.sql.DriverManager;
 public class ConnectionDB {
 
     private static final String url = "jdbc:mysql://localhost:3306/mercadoWeb";
-    private static final String usuario = "root";
-    private static final String senha = "";
+    private static final String user = "root";
+    private static final String password = "";
     private static final String driver = "com.mysql.cj.jdbc.Driver";
     
-    public static Connection conectar() {
+    public static Connection connect() {
         Connection con = null;
         try {
             Class.forName(driver);
-            con = DriverManager.getConnection(url, usuario, senha);
+            con = DriverManager.getConnection(url, user, password);
             return con;
         } catch (Exception e) {
             System.out.println(e);
