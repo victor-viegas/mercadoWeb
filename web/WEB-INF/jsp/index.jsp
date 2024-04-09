@@ -8,7 +8,7 @@
 </head>
 <body>
     <main>
-        <a href="./WEB-INF/jsp/login.jsp">LOGIN</a>
+        <a href="./register-user">CADASTRO</a>
     </main>
 </body>
 </html>
