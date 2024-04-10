@@ -38,16 +38,22 @@ function validate() {
         warningToast(text = 'Preencha o campo Nome de Usuario!');
         frmRegister.user.focus();
         return false;
+    } else if (users && users.some(item => item.user === user)) {
+        errorToast(text = 'Nome de usuário já existente!');
+        frmRegister.user.focus();
+        return false;
     } else if (password.trim() === "") {
         warningToast(text = 'Preencha o campo Senha!');
         frmRegister.password.focus();
         return false;
-    } else {
-        document.forms["frmRegister"].submit();
+    } else if (password.length < 8) {
+        warningToast(text = 'Senha deve conter pelo menos 8 caracteres!');
+        frmRegister.password.focus();
+        return false;
     }
+    document.forms["frmRegister"].submit();
 }
-
-let userInput = frmRegister.user.value;
+let users;
 fetch('./users')
     .then(response => {
         if (!response.ok) {
@@ -56,12 +62,7 @@ fetch('./users')
         return response.json();
     })
     .then(data => {
-        console.log("Dados retornados pela API:", data);
-        if (data.some(item => item.user === userInput)) {
-            console.log("O usuário já existe");
-        } else {
-            console.log("O usuário não existe");
-        }
+        users = data;
     })
     .catch(error => {
         console.error(error);

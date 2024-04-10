@@ -5,19 +5,19 @@ function warningToast(text) {
     createToast(type, icon, title, text);
 }
 
-function errorToast() {
+function errorToast(text) {
     let type = 'error';
     let icon = 'fa-solid fa-circle-exclamation';
     let title = 'Erro';
     createToast(type, icon, title, text);
 }
-function successToast() {
+function successToast(text) {
     let type = 'success';
     let icon = 'fa-solid fa-circle-check';
     let title = 'Sucesso';
     createToast(type, icon, title, text);
 }
-function infoToast() {
+function infoToast(text) {
     let type = 'info';
     let icon = 'fa-solid fa-circle-info';
     let title = 'Info';

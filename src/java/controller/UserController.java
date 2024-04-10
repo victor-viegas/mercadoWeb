@@ -16,6 +16,7 @@ import model.bean.UserDTO;
 public class UserController extends HttpServlet {
 
     UserDAO objUserDao = new UserDAO();
+    UserDTO objUser = new UserDTO();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -25,6 +26,9 @@ public class UserController extends HttpServlet {
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(path);
             dispatcher.forward(request, response);
         }
+        if (url.equals("/insert")) {
+            doPost(request, response);
+        }
     }
 
     @Override
@@ -33,7 +37,6 @@ public class UserController extends HttpServlet {
         processRequest(request, response);
         String url = request.getServletPath();
         if (url.equals("/users")) {
-            System.out.println(url);
             List<UserDTO> users = objUserDao.read();
 
             Gson gson = new Gson();
@@ -48,6 +51,15 @@ public class UserController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        objUser.setName(request.getParameter("name"));
+        objUser.setCpf(request.getParameter("cpf"));
+        objUser.setPhone(request.getParameter("phone"));
+        objUser.setBirthDate(request.getParameter("date"));
+        objUser.setUser(request.getParameter("user"));
+        objUser.setPassword(request.getParameter("password"));
+        objUserDao.insertUser(objUser);
+        String path = "/WEB-INF/jsp/index.jsp";
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(path);
+        dispatcher.forward(request, response);
     }
 }

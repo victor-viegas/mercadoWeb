@@ -46,11 +46,11 @@ public class UserDAO {
             PreparedStatement stmt = null;
             stmt = connection.prepareStatement("INSERT INTO usuarios (nome, senha, usuario, telefone, data_nascimento, cpf) VALUES (?, ?, ?, ?, ?, ?)");
             stmt.setString(1, objUser.getName());
-            stmt.setString(3, objUser.getPassword());
-            stmt.setString(4, objUser.getUser());
-            stmt.setString(5, objUser.getPhone());
-            stmt.setString(7, objUser.getBirthDate());
-            stmt.setString(8, objUser.getCpf());
+            stmt.setString(2, objUser.getPassword());
+            stmt.setString(3, objUser.getUser());
+            stmt.setString(4, objUser.getPhone());
+            stmt.setString(5, objUser.getBirthDate());
+            stmt.setString(6, objUser.getCpf());
             stmt.executeUpdate();
             stmt.close();
             connection.close();
