@@ -18,12 +18,20 @@ function validate() {
         warningToast(text = 'Preencha o campo CPF corretamente!');
         frmRegister.cpf.focus();
         return false;
+    } else if (users && users.some(item => item.cpf === cpf)) {
+        errorToast(text = 'Cpf de usuário já possui um cadastro!');
+        frmRegister.cpf.focus();
+        return false;
     } else if (phone.trim() === "") {
         warningToast(text = 'Preencha o campo Telefone!');
         frmRegister.phone.focus();
         return false;
     } else if (phone.length < 15 || phone.length >= 16) {
         warningToast(text = 'Preencha o campo Telefone corretamente!');
+        frmRegister.phone.focus();
+        return false;
+    } else if (users && users.some(item => item.phone === phone)) {
+        errorToast(text = 'Esse numero de telefone ja possui um cadastro!');
         frmRegister.phone.focus();
         return false;
     } else if (date.trim() === "") {
@@ -39,7 +47,7 @@ function validate() {
         frmRegister.user.focus();
         return false;
     } else if (users && users.some(item => item.user === user)) {
-        errorToast(text = 'Nome de usuário já existente!');
+        errorToast(text = 'Esse nome de usuario ja possui um cadastro!');
         frmRegister.user.focus();
         return false;
     } else if (password.trim() === "") {
