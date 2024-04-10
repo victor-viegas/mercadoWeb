@@ -5,6 +5,7 @@ function validate() {
     let date = frmRegister.date.value;
     let user = frmRegister.user.value;
     let password = frmRegister.password.value;
+
     if (name.trim() === "") {
         warningToast(text = 'Preencha o campo Nome Completo!');
         frmRegister.name.focus();
@@ -45,6 +46,26 @@ function validate() {
         document.forms["frmRegister"].submit();
     }
 }
+
+let userInput = frmRegister.user.value;
+fetch('./users')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erro ao obter dados dos usuários');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("Dados retornados pela API:", data);
+        if (data.some(item => item.user === userInput)) {
+            console.log("O usuário já existe");
+        } else {
+            console.log("O usuário não existe");
+        }
+    })
+    .catch(error => {
+        console.error(error);
+    });
 
 const handlePhone = (event) => {
     let input = event.target;
