@@ -16,7 +16,7 @@
     <main>
       <div class="notifications"></div>
       <div>
-        <h2>CRIAR CONTA</h2>
+        <h1>CRIAR CONTA</h1>
       </div>
       <section class="container">
         <form name="frmRegister" action="insert">

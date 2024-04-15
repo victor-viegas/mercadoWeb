@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.DAO.UserDAO;
 import model.bean.UserDTO;
 
-@WebServlet(name = "UserController", urlPatterns = {"/register-user", "/insert", "/users"})
+@WebServlet(name = "UserController", urlPatterns = {"/register-user", "/login-user", "/insert", "/users"})
 public class UserController extends HttpServlet {
 
     UserDAO objUserDao = new UserDAO();
@@ -23,6 +23,10 @@ public class UserController extends HttpServlet {
         String url = request.getServletPath();
         if (url.equals("/register-user")) {
             String path = "/WEB-INF/jsp/register.jsp";
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(path);
+            dispatcher.forward(request, response);
+        } else if (url.equals("/login-user")) {
+            String path = "/WEB-INF/jsp/login.jsp";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(path);
             dispatcher.forward(request, response);
         }
