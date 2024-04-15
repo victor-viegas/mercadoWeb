@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.DAO.UserDAO;
 import model.bean.UserDTO;
 
-@WebServlet(name = "UserController", urlPatterns = {"/register-user", "/login-user", "/insert", "/users"})
+@WebServlet(name = "UserController", urlPatterns = {"/register-user", "/login-user", "/insert", "/users", "/login"})
 public class UserController extends HttpServlet {
 
     UserDAO objUserDao = new UserDAO();
@@ -21,14 +21,27 @@ public class UserController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = request.getServletPath();
-        if (url.equals("/register-user")) {
-            String path = "/WEB-INF/jsp/register.jsp";
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(path);
-            dispatcher.forward(request, response);
-        } else if (url.equals("/login-user")) {
-            String path = "/WEB-INF/jsp/login.jsp";
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(path);
-            dispatcher.forward(request, response);
+        switch (url) {
+            case "/register-user": {
+                String path = "/WEB-INF/jsp/register.jsp";
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(path);
+                dispatcher.forward(request, response);
+                break;
+            }
+            case "/login-user": {
+                String path = "/WEB-INF/jsp/login.jsp";
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(path);
+                dispatcher.forward(request, response);
+                break;
+            }
+            case "/login": {
+                String path = "/WEB-INF/jsp/index.jsp";
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(path);
+                dispatcher.forward(request, response);
+                break;
+            }
+            default:
+                break;
         }
         if (url.equals("/insert")) {
             doPost(request, response);
