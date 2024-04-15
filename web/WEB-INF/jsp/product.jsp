@@ -4,14 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME</title>
+    <title>Produto</title>
 </head>
 <body>
-    <main>
-        <a href="./register-user">CADASTRO</a>
-        <a href="./login-user">LOGIN</a>
-        <a href="./category-product">CATEGORIA</a>
-        <a href="./product">PRODUTO</a>
-    </main>
+    <h1>PRODUTO</h1>
 </body>
 </html>
