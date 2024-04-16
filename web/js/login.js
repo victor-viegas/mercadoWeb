@@ -3,7 +3,6 @@ function validate() {
     let password = frmLogin.password.value;
 
     if (user.trim() === "") {
-        console.log("entrou")
         warningToast(text = 'Preencha o campo Nome de Usuario!');
         frmLogin.user.focus();
         return false;
@@ -19,6 +18,7 @@ function validate() {
     }
     document.forms["frmLogin"].submit();
 }
+
 let users;
 fetch('./users')
     .then(response => {
