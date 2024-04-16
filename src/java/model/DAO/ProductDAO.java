@@ -37,4 +37,21 @@ public class ProductDAO {
         }
         return products;
     }
+
+    public void insertProduct(ProductDTO objProduct) {
+        try {
+            Connection connection = ConnectionDB.connect();
+            PreparedStatement stmt = null;
+            stmt = connection.prepareStatement("INSERT INTO produtos (nome, imagem,valor,categoria_id) VALUES (?, ?, ?, ?)");
+            stmt.setString(1, objProduct.getName());
+            stmt.setBytes(2, objProduct.getImage());
+            stmt.setFloat(3, objProduct.getPrice());
+            stmt.setInt(4, objProduct.getCategoryId());
+            stmt.executeUpdate();
+            stmt.close();
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println("Erro no insert de produto: " + e);
+        }
+    }
 }
