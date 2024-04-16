@@ -34,7 +34,7 @@ public class UserController extends HttpServlet {
                 dispatcher.forward(request, response);
                 break;
             }
-            case "/login": {
+                        case "/login": {
                 String path = "/WEB-INF/jsp/index.jsp";
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(path);
                 dispatcher.forward(request, response);

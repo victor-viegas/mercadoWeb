@@ -29,6 +29,7 @@ fetch('./users')
     })
     .then(data => {
         users = data;
+        console.log(users)
     })
     .catch(error => {
         console.error(error);
