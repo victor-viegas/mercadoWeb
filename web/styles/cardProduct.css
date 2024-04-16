@@ -1,0 +1,24 @@
+.card a{
+    text-decoration: none;
+}
+.card-body{
+    height: 420px;
+    width: 280px;
+    border-radius: 15px;
+    box-shadow: 1px 0px 2px 3px rgba(44, 44, 44, 0.226);
+}
+.card-body img{
+    object-fit: cover;
+}
+
+.card-body h5{
+    text-align: center;
+}
+.card-body .name-product{
+    color: rgb(78, 78, 78);
+    font-weight: lighter;
+}
+.price .value{
+    color: rgb(48, 48, 48);
+    font-weight: bold;
+}
