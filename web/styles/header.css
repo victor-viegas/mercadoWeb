@@ -1,0 +1,10 @@
+@media (min-width: 991px){
+    header{
+        grid-template-columns: 1fr;
+    }
+    .container-header{
+        align-items: center;
+        justify-content: center;
+    }
+
+}
