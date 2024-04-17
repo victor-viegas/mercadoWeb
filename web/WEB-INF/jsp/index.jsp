@@ -11,29 +11,39 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/128/14512/14512231.png">
         <link rel="stylesheet" href="./styles/cardProduct.css">
+        <link rel="stylesheet" href="./styles/header.css">
         <title>HOME</title>
     </head>
 
     <body>
         <header>
-            <div class="container-header">
+            <div class="container-header d-grid">
                 <div class="upper-header"></div>
-                <div class="main-header">
-                    <div class="logo-container"></div>
-                    <div class="input-container">
-                        <input type="text" class="form-control" id="inputSearch" name="search">
-                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </div>
-                    <div class="user-container">
-
-                    </div>
-                    <div class="cart-container">
-                        <button><i class="fa-solid fa-cart-shopping"></i></button>
-                    </div>
+                <div class="logo-container"></div>
+                <div class="input-container">
+                    <input type="text" class="form-control" id="inputSearch" name="search">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
-                <div class="category-header">
-
+                <div class="user-container">
+                    <h2>USER</h2>
                 </div>
+                <div class="cart-container">
+                    <button><i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="category-header">
+                <nav>
+                    <ul class="category d-flex">
+                        <li><a href="#">Ver todas as categorias</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                        <li><a href="#">Saudável</a></li>
+                        <li><a href="#">Hortifrúti</a></li>
+                        <li><a href="#">Limpeza</a></li>
+                        <li><a href="#">Papelaria</a></li>
+                        <li><a href="#">Bebidas</a></li>
+                        <li><a href="#">Petshop</a></li>
+                    </ul>
+                </nav>
             </div>
         </header>
         <main>
