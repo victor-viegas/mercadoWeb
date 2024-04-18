@@ -9,14 +9,14 @@ function createProductCard(product) {
 
     card.innerHTML = `
         <div class="card rounded border-0 m-2">
-            <a class="product-item" href="#">
+            <a class="product-item" id="${product.idProduct}" href="#">
                 <div class="card-body p-4">
                     <img src="data:image/png;base64,${base64Image}" alt="${product.name}" class="img-fluid d-block mx-auto mb-3">
                     <h5 class="name-product">${product.name}</h5>
                     <div class="price d-flex justify-content-center">
                         <span class="value">R$ ${product.price}</span>
                     </div>
-                    <div class="d-flex justify-content-center m-3">
+                    <div class="btn-container d-flex justify-content-center m-3">
                         <a href="#" class="btn btn-success">Adicionar ao carrinho</a>
                     </div>
                 </div>
