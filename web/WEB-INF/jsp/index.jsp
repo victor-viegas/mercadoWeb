@@ -12,6 +12,7 @@
         <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/128/14512/14512231.png">
         <link rel="stylesheet" href="./styles/cardProduct.css">
         <link rel="stylesheet" href="./styles/header.css">
+        <link rel="stylesheet" href="./styles/shoppingCart.css">
         <title>HOME</title>
     </head>
 
@@ -27,7 +28,7 @@
                     <button><i class="fa-solid fa-user"></i></button>
                 </div>
                 <div class="cart-container">
-                    <button><i class="fa-solid fa-cart-shopping"></i></button>
+                    <button id="cart-button-open"><i class="fa-solid fa-cart-shopping"></i></button>
                 </div>
             </div>
             <div class="category-header">
@@ -44,9 +45,36 @@
                     </ul>
                 </nav>
             </div>
-            <div class="shoppingCart">
-                
+            <div class="container-cart-shopping">
+                <div id="shoppingCart">
+                    <div class="header-cart">
+                        <button id="cart-button-close"><i class="fa-solid fa-xmark"></i></button>
+                        <span>Carrinho</span>
+                    </div>
+                    <ul class="list-group-item">
+                        <li>
+                            <section class="item-cart">
+                                <div class="image-cart">
+                                    <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
+                                        alt="">
+                                </div>
+                                <div class="container-name-cart-item">
+                                    NOME
+                                </div>
+                                <div class="container-cart-trash">
+                                    <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger" ></i>
+                                </div>
+                                <div class="container-value-cart">
+                                    valor
+                                    <input type="number" value="1" min="0" max="1000" step="1"/>
+                                    valor total
+                                </div>
+                            </section>
+                        </li>
+                    </ul>
+                </div>
             </div>
+
         </header>
         <main>
             <a href="./register-user">CADASTRO</a>
@@ -80,5 +108,6 @@
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
     <script src="./js/cardCarousel.js"></script>
     <script src="./js/products.js"></script>
+    <script src="./js/shoppingCart.js"></script>
 
     </html>

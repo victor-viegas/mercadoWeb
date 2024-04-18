@@ -23,7 +23,6 @@ function createProductCard(product) {
             </a>
         </div>
     `;
-
     return card;
 }
 
