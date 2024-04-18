@@ -1,10 +1,15 @@
-@media (min-width: 991px){
-    header{
-        grid-template-columns: 1fr;
-    }
-    .container-header{
-        align-items: center;
+@media (min-width: 991px) {
+
+    .container-header {
         justify-content: center;
     }
 
+    .input-container {
+        display: flex;
+    }
+
+    .category-header ul{
+        list-style: none;
+        justify-content: space-around;
+    }
 }

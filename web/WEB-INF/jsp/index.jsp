@@ -17,15 +17,14 @@
 
     <body>
         <header>
-            <div class="container-header d-grid">
-                <div class="upper-header"></div>
+            <div class="container-header d-flex">
                 <div class="logo-container"></div>
                 <div class="input-container">
                     <input type="text" class="form-control" id="inputSearch" name="search">
                     <button><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
                 <div class="user-container">
-                    <h2>USER</h2>
+                    <button><i class="fa-solid fa-user"></i></button>
                 </div>
                 <div class="cart-container">
                     <button><i class="fa-solid fa-cart-shopping"></i></button>
@@ -44,6 +43,9 @@
                         <li><a href="#">Petshop</a></li>
                     </ul>
                 </nav>
+            </div>
+            <div class="shoppingCart">
+                
             </div>
         </header>
         <main>
