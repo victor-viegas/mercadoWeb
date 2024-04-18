@@ -55,22 +55,6 @@
                 <h2>Destaque da Semana <i class="fa-solid fa-fire" style="color: #ff0000;"></i></h2>
                 <div class="c-carousel c-carousel--simple">
                     <div class="c-carousel__slides js-carousel--simple d-flex">
-                        <div class="card rounded border-0 m-2">
-                            <a class="product-item" href="#">
-                                <div class="card-body p-4">
-                                    <img src="https://static.paodeacucar.com/img/uploads/1/120/24982120.png"
-                                        alt="coca cola" class="img-fluid d-block mx-auto mb-3">
-                                    <h5 class="name-product">Refrigerante Coca-Cola Original Garrafa 2L</h5>
-                                    <span class="small text-muted font-italic"></span>
-                                    <div class="price d-flex justify-content-center">
-                                        <spam class="value">R$ 11,49</spam>
-                                    </div>
-                                    <div class="d-flex justify-content-center m-3">
-                                        <a href="#" class="btn btn-success">Adicionar ao carrinho</a>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
                     </div>
                     <div class="carousel-buttons d-flex justify-content-center">
                         <button class="js-carousel--simple-prev btn btn-outline-dark m-2"
