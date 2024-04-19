@@ -50,12 +50,21 @@ function addToCart(productId, productName, productPrice) {
         })
         .then(data => {
             console.log('Resposta do backend:', data);
+            return fetch('./cart-itens');
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao obter dados dos produtos');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Dados do carrinho:', data);
         })
         .catch(error => {
-            console.error('Erro ao enviar solicitação:', error);
+            console.error('Erro:', error);
         });
 }
-
 
 
 // Função para converter um array de bytes em uma string Base64
