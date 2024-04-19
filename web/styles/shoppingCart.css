@@ -16,7 +16,6 @@
         visibility: hidden;
         overflow-x: hidden;
         z-index: 10000;
-
     }
 
     .header-cart {
@@ -36,6 +35,7 @@
         flex-direction: column;
         position: fixed;
         width: 25%;
+        height: 115px;
         bottom: 0;
         padding: 10px;
         background-color: white;
@@ -63,8 +63,8 @@
 
     #shoppingCart ul {
         list-style: none;
-        position: relative;
-        top: 80px;
+        margin-top: 80px;
+        margin-bottom: 115px;
     }
 
     #shoppingCart ul li {
