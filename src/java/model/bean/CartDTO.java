@@ -1,15 +1,16 @@
 package model.bean;
 
 public class CartDTO {
+
     private int idProduct;
     private String name;
     private int quantity;
-    private float priceUnitary;
+    private double priceUnitary;
 
     public CartDTO() {
     }
 
-    public CartDTO(int idProduct, String name, int quantity, float priceUnitary) {
+    public CartDTO(int idProduct, String name, int quantity, double priceUnitary) {
         this.idProduct = idProduct;
         this.name = name;
         this.quantity = quantity;
@@ -40,13 +41,12 @@ public class CartDTO {
         this.quantity = quantity;
     }
 
-    public float getPriceUnitary() {
+    public double getPriceUnitary() {
         return priceUnitary;
     }
 
-    public void setPriceUnitary(float priceUnitary) {
+    public void setPriceUnitary(double priceUnitary) {
         this.priceUnitary = priceUnitary;
     }
-    
-    
+
 }

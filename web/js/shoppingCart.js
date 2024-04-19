@@ -8,3 +8,10 @@ function toggleMenu(event) {
 
 cartButtonOpen.addEventListener('click', toggleMenu);
 cartButtonClose.addEventListener('click', toggleMenu);
+
+
+let cartItens;
+
+function createCartCard(cartItens){
+    
+}

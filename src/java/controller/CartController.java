@@ -1,17 +1,20 @@
 package controller;
 
-import com.google.gson.JsonObject;
+import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
+import java.util.List;
 import javax.json.Json;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.bean.CartDTO;
+import model.bean.CartSingleton;
 
-@WebServlet(name = "CartController", urlPatterns = {"/add-product-cart"})
+@WebServlet(name = "CartController", urlPatterns = {"/add-product-cart", "/cart-itens"})
 public class CartController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -23,6 +26,15 @@ public class CartController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        String path = request.getServletPath();
+        if (path.equals("/cart-itens")) {
+            List<CartDTO> cartItens = CartSingleton.getInstance().getCarrinhoItens();
+            Gson gson = new Gson();
+            String json = gson.toJson(cartItens);
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(json);
+        }
     }
 
     @Override
@@ -31,7 +43,6 @@ public class CartController extends HttpServlet {
         String path = request.getServletPath();
         if (path.equals("/add-product-cart")) {
             try {
-                // Obtenha o JSON do corpo da solicitação
                 BufferedReader reader = request.getReader();
                 StringBuilder sb = new StringBuilder();
                 String line;
@@ -45,6 +56,26 @@ public class CartController extends HttpServlet {
                 String productName = jsonObject.getString("productName");
                 double productPrice = jsonObject.getJsonNumber("productPrice").doubleValue();
                 int productQtd = jsonObject.getInt("productQtd");
+
+                CartDTO objCart = new CartDTO();
+                List<CartDTO> cartItens = CartSingleton.getInstance().getCarrinhoItens();
+
+                boolean found = false;
+                for (CartDTO item : cartItens) {
+                    if (item.getIdProduct() == productId) {
+                        item.setQuantity(item.getQuantity() + productQtd);
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found) {
+                    objCart.setIdProduct(productId);
+                    objCart.setName(productName);
+                    objCart.setPriceUnitary(productPrice);
+                    objCart.setQuantity(productQtd);
+                    CartSingleton.getInstance().adicionarItem(objCart);
+                }
                 
                 javax.json.JsonObject responseJson = Json.createObjectBuilder()
                         .add("message", "Produto adicionado ao carrinho com sucesso!")

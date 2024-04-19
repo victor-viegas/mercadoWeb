@@ -79,7 +79,7 @@ public class OrderDAO {
                 stmt.setInt(1, idOrder);
                 stmt.setInt(2, item.getIdProduct());
                 stmt.setInt(3, item.getQuantity());
-                stmt.setFloat(4, item.getPriceUnitary());
+                stmt.setDouble(4, item.getPriceUnitary());
                 stmt.executeUpdate();
             }
 
