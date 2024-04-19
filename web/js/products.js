@@ -17,7 +17,7 @@ function createProductCard(product) {
                         <span class="value">R$ ${product.price}</span>
                     </div>
                     <div class="btn-container d-flex justify-content-center m-3">
-                        <a href="#" class="btn btn-success">Adicionar ao carrinho</a>
+                        <a href="#" class="btn btn-success" onclick="addToCart(${product.idProduct}, '${product.name}', ${product.price})">Adicionar ao carrinho</a>
                     </div>
                 </div>
             </a>
@@ -25,6 +25,38 @@ function createProductCard(product) {
     `;
     return card;
 }
+
+// Envia uma solicitação para o backend com os dados do produto
+function addToCart(productId, productName, productPrice) {
+    const data = {
+        productId: productId,
+        productName: productName,
+        productPrice: productPrice,
+        productQtd: 1
+    };
+
+    fetch('./add-product-cart', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro na solicitação: ' + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Resposta do backend:', data);
+        })
+        .catch(error => {
+            console.error('Erro ao enviar solicitação:', error);
+        });
+}
+
+
 
 // Função para converter um array de bytes em uma string Base64
 function arrayBufferToBase64(buffer) {
@@ -48,6 +80,7 @@ function loadProductsIntoCarousel(products) {
         carousel.appendChild(card);
     });
 }
+
 //Acesso aos dados da api
 fetch('./list-products')
     .then(response => {

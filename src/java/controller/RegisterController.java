@@ -24,7 +24,7 @@ import model.bean.ProductDTO;
  */
 @WebServlet(name = "CadastroController", urlPatterns = {"/CadastroController"})
 @MultipartConfig
-public class CadastroController extends HttpServlet {
+public class RegisterController extends HttpServlet {
     
     ProductDTO objProduct = new ProductDTO();
     ProductDAO objProductDao = new ProductDAO();
