@@ -52,198 +52,201 @@
                                 class="fa-solid fa-xmark text-light"></i></button>
                         <div class="text-light">Carrinho(<span id="cart-itens-qtd">0</span>)</div>
                     </header>
-                    <ul class="list-group-item">
-                        <li>
-                            <section class="item-cart">
-                                <div class="image-cart">
-                                    <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
-                                        alt="">
-                                </div>
-                                <div class="container-name-cart-item">
-                                    <span>Nome</span>
-                                </div>
-                                <div class="container-cart-trash">
-                                    <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger"></i>
-                                </div>
-                                <div class="container-value-cart">
-                                    <span>R$99,99</span>
-                                    <input type="number" value="1" min="0" max="1000" step="1" />
-                                    <span>R$ 1290</span>
-                                </div>
-                            </section>
-                        </li>
-                        <li>
-                            <section class="item-cart">
-                                <div class="image-cart">
-                                    <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
-                                        alt="">
-                                </div>
-                                <div class="container-name-cart-item">
-                                    <span>Nome</span>
-                                </div>
-                                <div class="container-cart-trash">
-                                    <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger"></i>
-                                </div>
-                                <div class="container-value-cart">
-                                    <span>R$99,99</span>
-                                    <input type="number" value="1" min="0" max="1000" step="1" />
-                                    <span>R$ 1290</span>
-                                </div>
-                            </section>
-                        </li>
-                        <li>
-                            <section class="item-cart">
-                                <div class="image-cart">
-                                    <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
-                                        alt="">
-                                </div>
-                                <div class="container-name-cart-item">
-                                    <span>Nome</span>
-                                </div>
-                                <div class="container-cart-trash">
-                                    <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger"></i>
-                                </div>
-                                <div class="container-value-cart">
-                                    <span>R$99,99</span>
-                                    <input type="number" value="1" min="0" max="1000" step="1" />
-                                    <span>R$ 1290</span>
-                                </div>
-                            </section>
-                        </li>
-                        <li>
-                            <section class="item-cart">
-                                <div class="image-cart">
-                                    <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
-                                        alt="">
-                                </div>
-                                <div class="container-name-cart-item">
-                                    <span>Nome</span>
-                                </div>
-                                <div class="container-cart-trash">
-                                    <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger"></i>
-                                </div>
-                                <div class="container-value-cart">
-                                    <span>R$99,99</span>
-                                    <input type="number" value="1" min="0" max="1000" step="1" />
-                                    <span>R$ 1290</span>
-                                </div>
-                            </section>
-                        </li>
-                        <li>
-                            <section class="item-cart">
-                                <div class="image-cart">
-                                    <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
-                                        alt="">
-                                </div>
-                                <div class="container-name-cart-item">
-                                    <span>Nome</span>
-                                </div>
-                                <div class="container-cart-trash">
-                                    <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger"></i>
-                                </div>
-                                <div class="container-value-cart">
-                                    <span>R$99,99</span>
-                                    <input type="number" value="1" min="0" max="1000" step="1" />
-                                    <span>R$ 1290</span>
-                                </div>
-                            </section>
-                        </li>
-                        <li>
-                            <section class="item-cart">
-                                <div class="image-cart">
-                                    <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
-                                        alt="">
-                                </div>
-                                <div class="container-name-cart-item">
-                                    <span>Nome</span>
-                                </div>
-                                <div class="container-cart-trash">
-                                    <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger"></i>
-                                </div>
-                                <div class="container-value-cart">
-                                    <span>R$99,99</span>
-                                    <input type="number" value="1" min="0" max="1000" step="1" />
-                                    <span>R$ 1290</span>
-                                </div>
-                            </section>
-                        </li>
-                        <li>
-                            <section class="item-cart">
-                                <div class="image-cart">
-                                    <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
-                                        alt="">
-                                </div>
-                                <div class="container-name-cart-item">
-                                    <span>Nome</span>
-                                </div>
-                                <div class="container-cart-trash">
-                                    <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger"></i>
-                                </div>
-                                <div class="container-value-cart">
-                                    <span>R$99,99</span>
-                                    <input type="number" value="1" min="0" max="1000" step="1" />
-                                    <span>R$ 1290</span>
-                                </div>
-                            </section>
-                        </li>
-                        <li>
-                            <section class="item-cart">
-                                <div class="image-cart">
-                                    <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
-                                        alt="">
-                                </div>
-                                <div class="container-name-cart-item">
-                                    <span>Nome</span>
-                                </div>
-                                <div class="container-cart-trash">
-                                    <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger"></i>
-                                </div>
-                                <div class="container-value-cart">
-                                    <span>R$99,99</span>
-                                    <input type="number" value="1" min="0" max="1000" step="1" />
-                                    <span>R$ 1290</span>
-                                </div>
-                            </section>
-                        </li>
-                        <li>
-                            <section class="item-cart">
-                                <div class="image-cart">
-                                    <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
-                                        alt="">
-                                </div>
-                                <div class="container-name-cart-item">
-                                    <span>Nome</span>
-                                </div>
-                                <div class="container-cart-trash">
-                                    <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger"></i>
-                                </div>
-                                <div class="container-value-cart">
-                                    <span>R$99,99</span>
-                                    <input type="number" value="1" min="0" max="1000" step="1" />
-                                    <span>R$ 1290</span>
-                                </div>
-                            </section>
-                        </li>
-                        <li>
-                            <section class="item-cart">
-                                <div class="image-cart">
-                                    <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
-                                        alt="">
-                                </div>
-                                <div class="container-name-cart-item">
-                                    <span>Nome</span>
-                                </div>
-                                <div class="container-cart-trash">
-                                    <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger"></i>
-                                </div>
-                                <div class="container-value-cart">
-                                    <span>R$99,99</span>
-                                    <input type="number" value="1" min="0" max="1000" step="1" />
-                                    <span>R$ 1290</span>
-                                </div>
-                            </section>
-                        </li>
-                    </ul>
+                    <div class="itens-cart-ul">
+                        <ul class="list-group-item">
+                            <li>
+                                <section class="item-cart">
+                                    <div class="image-cart">
+                                        <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
+                                            alt="">
+                                    </div>
+                                    <div class="container-name-cart-item">
+                                        <span>Nome</span>
+                                    </div>
+                                    <div class="container-cart-trash">
+                                        <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger"></i>
+                                    </div>
+                                    <div class="container-value-cart">
+                                        <span>R$99,99</span>
+                                        <input type="number" value="1" min="0" max="1000" step="1" />
+                                        <span>R$ 1290</span>
+                                    </div>
+                                </section>
+                            </li>
+                            <li>
+                                <section class="item-cart">
+                                    <div class="image-cart">
+                                        <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
+                                            alt="">
+                                    </div>
+                                    <div class="container-name-cart-item">
+                                        <span>Nome</span>
+                                    </div>
+                                    <div class="container-cart-trash">
+                                        <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger"></i>
+                                    </div>
+                                    <div class="container-value-cart">
+                                        <span>R$99,99</span>
+                                        <input type="number" value="1" min="0" max="1000" step="1" />
+                                        <span>R$ 1290</span>
+                                    </div>
+                                </section>
+                            </li>
+                            <li>
+                                <section class="item-cart">
+                                    <div class="image-cart">
+                                        <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
+                                            alt="">
+                                    </div>
+                                    <div class="container-name-cart-item">
+                                        <span>Nome</span>
+                                    </div>
+                                    <div class="container-cart-trash">
+                                        <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger"></i>
+                                    </div>
+                                    <div class="container-value-cart">
+                                        <span>R$99,99</span>
+                                        <input type="number" value="1" min="0" max="1000" step="1" />
+                                        <span>R$ 1290</span>
+                                    </div>
+                                </section>
+                            </li>
+                            <li>
+                                <section class="item-cart">
+                                    <div class="image-cart">
+                                        <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
+                                            alt="">
+                                    </div>
+                                    <div class="container-name-cart-item">
+                                        <span>Nome</span>
+                                    </div>
+                                    <div class="container-cart-trash">
+                                        <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger"></i>
+                                    </div>
+                                    <div class="container-value-cart">
+                                        <span>R$99,99</span>
+                                        <input type="number" value="1" min="0" max="1000" step="1" />
+                                        <span>R$ 1290</span>
+                                    </div>
+                                </section>
+                            </li>
+                            <li>
+                                <section class="item-cart">
+                                    <div class="image-cart">
+                                        <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
+                                            alt="">
+                                    </div>
+                                    <div class="container-name-cart-item">
+                                        <span>Nome</span>
+                                    </div>
+                                    <div class="container-cart-trash">
+                                        <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger"></i>
+                                    </div>
+                                    <div class="container-value-cart">
+                                        <span>R$99,99</span>
+                                        <input type="number" value="1" min="0" max="1000" step="1" />
+                                        <span>R$ 1290</span>
+                                    </div>
+                                </section>
+                            </li>
+                            <li>
+                                <section class="item-cart">
+                                    <div class="image-cart">
+                                        <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
+                                            alt="">
+                                    </div>
+                                    <div class="container-name-cart-item">
+                                        <span>Nome</span>
+                                    </div>
+                                    <div class="container-cart-trash">
+                                        <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger"></i>
+                                    </div>
+                                    <div class="container-value-cart">
+                                        <span>R$99,99</span>
+                                        <input type="number" value="1" min="0" max="1000" step="1" />
+                                        <span>R$ 1290</span>
+                                    </div>
+                                </section>
+                            </li>
+                            <li>
+                                <section class="item-cart">
+                                    <div class="image-cart">
+                                        <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
+                                            alt="">
+                                    </div>
+                                    <div class="container-name-cart-item">
+                                        <span>Nome</span>
+                                    </div>
+                                    <div class="container-cart-trash">
+                                        <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger"></i>
+                                    </div>
+                                    <div class="container-value-cart">
+                                        <span>R$99,99</span>
+                                        <input type="number" value="1" min="0" max="1000" step="1" />
+                                        <span>R$ 1290</span>
+                                    </div>
+                                </section>
+                            </li>
+                            <li>
+                                <section class="item-cart">
+                                    <div class="image-cart">
+                                        <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
+                                            alt="">
+                                    </div>
+                                    <div class="container-name-cart-item">
+                                        <span>Nome</span>
+                                    </div>
+                                    <div class="container-cart-trash">
+                                        <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger"></i>
+                                    </div>
+                                    <div class="container-value-cart">
+                                        <span>R$99,99</span>
+                                        <input type="number" value="1" min="0" max="1000" step="1" />
+                                        <span>R$ 1290</span>
+                                    </div>
+                                </section>
+                            </li>
+                            <li>
+                                <section class="item-cart">
+                                    <div class="image-cart">
+                                        <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
+                                            alt="">
+                                    </div>
+                                    <div class="container-name-cart-item">
+                                        <span>Nome</span>
+                                    </div>
+                                    <div class="container-cart-trash">
+                                        <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger"></i>
+                                    </div>
+                                    <div class="container-value-cart">
+                                        <span>R$99,99</span>
+                                        <input type="number" value="1" min="0" max="1000" step="1" />
+                                        <span>R$ 1290</span>
+                                    </div>
+                                </section>
+                            </li>
+                            <li>
+                                <section class="item-cart">
+                                    <div class="image-cart">
+                                        <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
+                                            alt="">
+                                    </div>
+                                    <div class="container-name-cart-item">
+                                        <span>Nome</span>
+                                    </div>
+                                    <div class="container-cart-trash">
+                                        <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger"></i>
+                                    </div>
+                                    <div class="container-value-cart">
+                                        <span>R$99,99</span>
+                                        <input type="number" value="1" min="0" max="1000" step="1" />
+                                        <span>R$ 1290</span>
+                                    </div>
+                                </section>
+                            </li>
+                        </ul>
+                    </div>
+
                     <footer class="footer-cart">
                         <div class="table-values">
                             <table class="table table-borderless">
