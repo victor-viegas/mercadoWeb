@@ -14,12 +14,15 @@ import javax.servlet.http.HttpServletResponse;
 import model.bean.CartDTO;
 import model.bean.CartSingleton;
 
-@WebServlet(name = "CartController", urlPatterns = {"/add-product-cart", "/cart-itens"})
+@WebServlet(name = "CartController", urlPatterns = {"/add-product-cart", "/cart-itens", "/update-quantity"})
 public class CartController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        String path = request.getServletPath();
+        if (path.equals("/update-quantity")) {
+            doPut(request, response);
+        }
     }
 
     @Override
@@ -88,6 +91,43 @@ public class CartController extends HttpServlet {
                 response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
                 response.getWriter().write("Erro interno ao processar a solicitação.");
             }
+        }
+    }
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        try {
+            BufferedReader reader = req.getReader();
+            StringBuilder sb = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line);
+            }
+            String json = sb.toString();
+
+            javax.json.JsonObject jsonObject = Json.createReader(new StringReader(json)).readObject();
+            int productId = jsonObject.getInt("productId");
+            int productQtd = Integer.parseInt(jsonObject.getString("productQtd"));
+
+            CartDTO objCart = new CartDTO();
+            List<CartDTO> cartItens = CartSingleton.getInstance().getCarrinhoItens();
+            for (CartDTO item : cartItens) {
+                if (item.getIdProduct() == productId) {
+                    item.setQuantity(productQtd);
+                    break;
+                }
+            }
+
+            javax.json.JsonObject responseJson = Json.createObjectBuilder()
+                    .add("message", "Quantidade atualizada com sucesso!")
+                    .build();
+            resp.setContentType("application/json");
+            resp.setCharacterEncoding("UTF-8");
+            resp.getWriter().write(responseJson.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            resp.getWriter().write("Erro interno ao processar a solicitação.");
         }
     }
 
