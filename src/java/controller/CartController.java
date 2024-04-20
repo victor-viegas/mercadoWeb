@@ -76,7 +76,7 @@ public class CartController extends HttpServlet {
                     objCart.setQuantity(productQtd);
                     CartSingleton.getInstance().adicionarItem(objCart);
                 }
-                
+
                 javax.json.JsonObject responseJson = Json.createObjectBuilder()
                         .add("message", "Produto adicionado ao carrinho com sucesso!")
                         .build();

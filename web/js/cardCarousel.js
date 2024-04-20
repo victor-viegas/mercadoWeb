@@ -4,8 +4,8 @@ new Glider($simpleCarousel, {
     slidesToShow: 1,
     slidesToScroll: 1,
     draggable: true,
-    dragVelocity: 5,
-    duration: 5,
+    dragVelocity: 2,
+    duration: 2,
     arrows: {
         prev: ".js-carousel--simple-prev",
         next: ".js-carousel--simple-next",

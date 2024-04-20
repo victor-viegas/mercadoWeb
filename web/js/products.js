@@ -1,4 +1,5 @@
 let products;
+let cartProducts;
 //função que cria os cards dos produtos
 function createProductCard(product) {
     const card = document.createElement('div');
@@ -59,7 +60,7 @@ function addToCart(productId, productName, productPrice) {
             return response.json();
         })
         .then(data => {
-            console.log('Dados do carrinho:', data);
+            loadCartProduct(data);
         })
         .catch(error => {
             console.error('Erro:', error);
