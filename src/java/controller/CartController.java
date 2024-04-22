@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.util.List;
 import javax.json.Json;
+import javax.json.JsonArray;
+import javax.json.JsonNumber;
+import javax.json.JsonString;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +19,7 @@ import model.bean.CartSingleton;
 
 @WebServlet(name = "CartController", urlPatterns = {"/add-product-cart", "/cart-itens", "/update-quantity", "/delete-item-cart"})
 public class CartController extends HttpServlet {
-
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String path = request.getServletPath();
@@ -26,7 +29,7 @@ public class CartController extends HttpServlet {
             doDelete(request, response);
         }
     }
-
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -41,7 +44,7 @@ public class CartController extends HttpServlet {
             response.getWriter().write(json);
         }
     }
-
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -55,16 +58,16 @@ public class CartController extends HttpServlet {
                     sb.append(line);
                 }
                 String json = sb.toString();
-
+                
                 javax.json.JsonObject jsonObject = Json.createReader(new StringReader(json)).readObject();
                 int productId = jsonObject.getInt("productId");
                 String productName = jsonObject.getString("productName");
                 double productPrice = jsonObject.getJsonNumber("productPrice").doubleValue();
                 int productQtd = jsonObject.getInt("productQtd");
-
+                JsonString productImage = jsonObject.getJsonString("productImage");
                 CartDTO objCart = new CartDTO();
                 List<CartDTO> cartItens = CartSingleton.getInstance().getCarrinhoItens();
-
+                
                 boolean found = false;
                 for (CartDTO item : cartItens) {
                     if (item.getIdProduct() == productId) {
@@ -73,15 +76,16 @@ public class CartController extends HttpServlet {
                         break;
                     }
                 }
-
+                
                 if (!found) {
                     objCart.setIdProduct(productId);
                     objCart.setName(productName);
                     objCart.setPriceUnitary(productPrice);
                     objCart.setQuantity(productQtd);
+                    objCart.setImage(productImage);
                     CartSingleton.getInstance().adicionarItem(objCart);
                 }
-
+                
                 javax.json.JsonObject responseJson = Json.createObjectBuilder()
                         .add("message", "Produto adicionado ao carrinho com sucesso!")
                         .build();
@@ -95,7 +99,7 @@ public class CartController extends HttpServlet {
             }
         }
     }
-
+    
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
@@ -106,11 +110,11 @@ public class CartController extends HttpServlet {
                 sb.append(line);
             }
             String json = sb.toString();
-
+            
             javax.json.JsonObject jsonObject = Json.createReader(new StringReader(json)).readObject();
             int productId = jsonObject.getInt("productId");
             int productQtd = Integer.parseInt(jsonObject.getString("productQtd"));
-
+            
             CartDTO objCart = new CartDTO();
             List<CartDTO> cartItens = CartSingleton.getInstance().getCarrinhoItens();
             for (CartDTO item : cartItens) {
@@ -119,7 +123,7 @@ public class CartController extends HttpServlet {
                     break;
                 }
             }
-
+            
             javax.json.JsonObject responseJson = Json.createObjectBuilder()
                     .add("message", "Quantidade atualizada com sucesso!")
                     .build();
@@ -132,12 +136,12 @@ public class CartController extends HttpServlet {
             resp.getWriter().write("Erro interno ao processar a solicitação.");
         }
     }
-
+    
     @Override
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String productId = request.getParameter("productId");
         List<CartDTO> cartItems = CartSingleton.getInstance().getCarrinhoItens();
-
+        
         CartDTO itemToRemove = null;
         for (CartDTO item : cartItems) {
             if (item.getIdProduct() == Integer.parseInt(productId)) {
@@ -148,13 +152,12 @@ public class CartController extends HttpServlet {
         if (itemToRemove != null) {
             cartItems.remove(itemToRemove);
         }
-
         response.setStatus(HttpServletResponse.SC_OK);
     }
-
+    
     @Override
     public String getServletInfo() {
         return "Short description";
     }
-
+    
 }

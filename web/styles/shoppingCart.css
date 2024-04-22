@@ -73,7 +73,7 @@
         border: 1px solid rgba(166, 166, 166, 0.259);
         border-radius: 10px;
         transition: .4s ease-in-out;
-        max-height: 120px;
+        min-height: 120px;
     }
 
     .container-name-cart-item {
@@ -98,6 +98,7 @@
 
     .item-cart .image-cart {
         grid-area: 1 / 1 / 3 / 2;
+        min-height: 120px;
     }
 
     .item-cart .container-name-cart-item {
@@ -125,6 +126,11 @@
 
     .item-cart .image-cart img {
         object-fit: cover;
-        width: 96px;
+        height: 120px;
+        width: 90px;
+    }
+    .value-td{
+        display: flex;
+        justify-content: center;
     }
 }

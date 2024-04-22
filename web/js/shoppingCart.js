@@ -15,11 +15,13 @@ cartButtonClose.addEventListener('click', toggleMenu);
 function createCartCard(cartItens) {
     const cardItem = document.createElement('li');
     let totalPrice = cartItens.priceUnitary * cartItens.quantity;
+    const novoValor = cartItens.priceUnitary * cartItens.quantity;
+    console.log(cartItens.image)
     cardItem.innerHTML = `
         <section class="item-cart" id="${cartItens.idProduct}">
             <div class="image-cart">
-                <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F97508577%2Fgin-tanqueray-london-dry-750ml-1.jpg%3Fv%3D638100837585500000&w=96&q=50"
-                    alt="">
+                <img src="data:image/png;base64,${cartItens.image.value}"
+                    alt="${cartItens.name}">
             </div>
             <div class="container-name-cart-item">
                 <span>${cartItens.name}</span>
@@ -29,13 +31,15 @@ function createCartCard(cartItens) {
             </div>
             <div class="container-value-cart">
                 <span>R$${cartItens.priceUnitary}</span>
-                <input id="qtd-input" onclick="sendQtd(${cartItens.idProduct}, this.value)" type="number" value="${cartItens.quantity}" min="0" max="1000" step="1" />
+                <input id="qtd-input" onclick="sendQtd(${cartItens.idProduct}, this.value)" type="number" value="${cartItens.quantity}" min="0" max="10" step="1" />
                 <span>R$ ${totalPrice.toFixed(2)}</span>
             </div>
         </section>
     `;
+    priceFooter.textContent = novoValor.toFixed(2);
     return cardItem;
 }
+
 //carrega os card dos itens do carrinho de compra
 function loadCartProduct(cartItens) {
     const element = document.querySelector('.list-group-item');
@@ -69,6 +73,7 @@ function sendQtd(productId, quantity) {
         .catch(error => {
             console.error('Erro:', error);
         });
+    loadCart();
 }
 
 //envia soicitação para a remoção do item do carrinho de compras
@@ -95,9 +100,7 @@ function deleteItem(productId) {
         });
     loadCart();
 }
-
-
-
+//carrega os itens no carrinho de compras
 function loadCart() {
     fetch('./cart-itens')
         .then(response => {

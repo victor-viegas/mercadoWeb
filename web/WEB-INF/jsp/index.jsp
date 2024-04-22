@@ -62,7 +62,8 @@
                             <table class="table table-borderless">
                                 <tbody>
                                     <td class="text-td">Valor total</td>
-                                    <td class="value-td">R$ <span id="total-price-footer"></span></td>
+                                    <td class="value-td">R$ <div id="total-price-footer"></div>
+                                    </td>
                                 </tbody>
                             </table>
                         </div>
