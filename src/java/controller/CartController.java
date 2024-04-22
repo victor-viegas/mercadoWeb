@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.bean.CartDTO;
 import model.bean.CartSingleton;
 
-@WebServlet(name = "CartController", urlPatterns = {"/add-product-cart", "/cart-itens", "/update-quantity"})
+@WebServlet(name = "CartController", urlPatterns = {"/add-product-cart", "/cart-itens", "/update-quantity", "/delete-item-cart"})
 public class CartController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -22,6 +22,8 @@ public class CartController extends HttpServlet {
         String path = request.getServletPath();
         if (path.equals("/update-quantity")) {
             doPut(request, response);
+        } else if (path.equals("/delete-item-cart")) {
+            doDelete(request, response);
         }
     }
 
@@ -129,6 +131,25 @@ public class CartController extends HttpServlet {
             resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             resp.getWriter().write("Erro interno ao processar a solicitação.");
         }
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String productId = request.getParameter("productId");
+        List<CartDTO> cartItems = CartSingleton.getInstance().getCarrinhoItens();
+
+        CartDTO itemToRemove = null;
+        for (CartDTO item : cartItems) {
+            if (item.getIdProduct() == Integer.parseInt(productId)) {
+                itemToRemove = item;
+                break;
+            }
+        }
+        if (itemToRemove != null) {
+            cartItems.remove(itemToRemove);
+        }
+
+        response.setStatus(HttpServletResponse.SC_OK);
     }
 
     @Override

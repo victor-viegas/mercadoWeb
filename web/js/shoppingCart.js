@@ -25,7 +25,7 @@ function createCartCard(cartItens) {
                 <span>${cartItens.name}</span>
             </div>
             <div class="container-cart-trash">
-                <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger"></i>
+                <i class="fa-solid fa-trash-can fa-xs btn btn-outline-danger" onclick="deleteItem(${cartItens.idProduct})"></i>
             </div>
             <div class="container-value-cart">
                 <span>R$${cartItens.priceUnitary}</span>
@@ -71,16 +71,46 @@ function sendQtd(productId, quantity) {
         });
 }
 
-fetch('./cart-itens')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Erro ao obter dados dos produtos');
-        }
-        return response.json();
+//envia soicitação para a remoção do item do carrinho de compras
+function deleteItem(productId) {
+    fetch('./delete-item-cart?productId=' + productId, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
     })
-    .then(data => {
-        loadCartProduct(data);
-    })
-    .catch(error => {
-        console.error(error);
-    });
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro na solicitação: ' + response.status);
+            }
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                return null;
+            }
+
+            return response.json();
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+        });
+    loadCart();
+}
+
+
+
+function loadCart() {
+    fetch('./cart-itens')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao obter dados dos produtos');
+            }
+            return response.json();
+        })
+        .then(data => {
+            loadCartProduct(data);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+}
+loadCart();
