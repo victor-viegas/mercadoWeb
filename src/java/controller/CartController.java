@@ -148,7 +148,6 @@ public class CartController extends HttpServlet {
         if (itemToRemove != null) {
             cartItems.remove(itemToRemove);
         }
-
         response.setStatus(HttpServletResponse.SC_OK);
     }
 

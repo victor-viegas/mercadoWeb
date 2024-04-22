@@ -69,6 +69,7 @@ function sendQtd(productId, quantity) {
         .catch(error => {
             console.error('Erro:', error);
         });
+    loadCart();
 }
 
 //envia soicitação para a remoção do item do carrinho de compras
@@ -95,8 +96,6 @@ function deleteItem(productId) {
         });
     loadCart();
 }
-
-
 
 function loadCart() {
     fetch('./cart-itens')
