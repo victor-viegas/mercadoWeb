@@ -7,7 +7,6 @@ function createProductCard(product) {
 
     // Converter os bytes da imagem para uma string Base64
     const base64Image = arrayBufferToBase64(product.image);
-
     card.innerHTML = `
         <div class="card rounded border-0 m-2">
             <a class="product-item" id="${product.idProduct}" href="#">
@@ -18,7 +17,7 @@ function createProductCard(product) {
                         <span class="value">R$ ${product.price}</span>
                     </div>
                     <div class="btn-container d-flex justify-content-center m-3">
-                        <a href="#" class="btn btn-success" onclick="addToCart(${product.idProduct}, '${product.name}', ${product.price})">Adicionar ao carrinho</a>
+                        <a href="#" class="btn btn-success" onclick="addToCart(${product.idProduct}, '${product.name}', ${product.price},'${base64Image}')">Adicionar ao carrinho</a>
                     </div>
                 </div>
             </a>
@@ -28,14 +27,14 @@ function createProductCard(product) {
 }
 
 // Envia uma solicitação para o backend com os dados do produto
-function addToCart(productId, productName, productPrice) {
+function addToCart(productId, productName, productPrice, productImage) {
     const data = {
         productId: productId,
         productName: productName,
         productPrice: productPrice,
+        productImage: productImage,
         productQtd: 1
     };
-
     fetch('./add-product-cart', {
         method: 'POST',
         headers: {

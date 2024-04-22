@@ -1,20 +1,24 @@
 package model.bean;
 
+import javax.json.JsonString;
+
 public class CartDTO {
 
     private int idProduct;
     private String name;
     private int quantity;
     private double priceUnitary;
+    private JsonString image;
 
     public CartDTO() {
     }
 
-    public CartDTO(int idProduct, String name, int quantity, double priceUnitary) {
+    public CartDTO(int idProduct, String name, int quantity, double priceUnitary, JsonString image) {
         this.idProduct = idProduct;
         this.name = name;
         this.quantity = quantity;
         this.priceUnitary = priceUnitary;
+        this.image = image;
     }
 
     public int getIdProduct() {
@@ -47,6 +51,14 @@ public class CartDTO {
 
     public void setPriceUnitary(double priceUnitary) {
         this.priceUnitary = priceUnitary;
+    }
+
+    public JsonString getImage() {
+        return image;
+    }
+
+    public void setImage(JsonString image) {
+        this.image = image;
     }
 
 }
