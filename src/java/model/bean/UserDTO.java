@@ -1,7 +1,9 @@
 package model.bean;
 
 public class UserDTO {
+
     private int idUser;
+    private static int id;
     private String name;
     private String user;
     private String password;
@@ -28,6 +30,14 @@ public class UserDTO {
 
     public void setIdUser(int idUser) {
         this.idUser = idUser;
+    }
+
+    public static int getId() {
+        return id;
+    }
+
+    public static void setId(int id) {
+        UserDTO.id = id;
     }
 
     public String getName() {
@@ -77,5 +87,5 @@ public class UserDTO {
     public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
-    
+
 }

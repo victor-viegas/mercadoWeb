@@ -6,13 +6,13 @@ public class OrderDTO {
     private int adressId;
     private String statusPayment;
     private String methodPayment;
-    private float totalPrice;
+    private double totalPrice;
     private String dateTime;
 
     public OrderDTO() {
     }
 
-    public OrderDTO(int idOrder, int userId, int adressId, String statusPayment, String methodPayment, float totalPrice, String dateTime) {
+    public OrderDTO(int idOrder, int userId, int adressId, String statusPayment, String methodPayment, double totalPrice, String dateTime) {
         this.idOrder = idOrder;
         this.userId = userId;
         this.adressId = adressId;
@@ -62,11 +62,11 @@ public class OrderDTO {
         this.methodPayment = methodPayment;
     }
 
-    public float getTotalPrice() {
+    public double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(float totalPrice) {
+    public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
 
