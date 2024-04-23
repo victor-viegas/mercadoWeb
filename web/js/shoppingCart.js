@@ -14,8 +14,7 @@ cartButtonClose.addEventListener('click', toggleMenu);
 //cria os card com base nos dados do carrinho de compra
 function createCartCard(cartItens) {
     const cardItem = document.createElement('li');
-    let totalPrice = cartItens.priceUnitary * cartItens.quantity;
-    const novoValor = cartItens.priceUnitary * cartItens.quantity;
+    const totalPrice = cartItens.priceUnitary * cartItens.quantity;
     console.log(cartItens.image)
     cardItem.innerHTML = `
         <section class="item-cart" id="${cartItens.idProduct}">
@@ -36,10 +35,23 @@ function createCartCard(cartItens) {
             </div>
         </section>
     `;
-    priceFooter.textContent = novoValor.toFixed(2);
     return cardItem;
 }
 
+//calcula o valor total dos itens do carrinho
+function calculateTotalPrice(cartItens) {
+    let totalPrice = 0;
+    cartItens.forEach(cartItens => {
+        totalPrice += cartItens.priceUnitary * cartItens.quantity;
+    });
+    return totalPrice;
+}
+
+//atualiza o valor total do footer do carrinho
+function updateCartTotal(cartItens) {
+    const totalPrice = calculateTotalPrice(cartItens);
+    priceFooter.textContent = totalPrice.toFixed(2);
+}
 //carrega os card dos itens do carrinho de compra
 function loadCartProduct(cartItens) {
     const element = document.querySelector('.list-group-item');
@@ -110,6 +122,7 @@ function loadCart() {
             return response.json();
         })
         .then(data => {
+            updateCartTotal(data); 
             loadCartProduct(data);
         })
         .catch(error => {

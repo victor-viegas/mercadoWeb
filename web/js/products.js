@@ -46,10 +46,10 @@ function addToCart(productId, productName, productPrice, productImage) {
             if (!response.ok) {
                 throw new Error('Erro na solicitação: ' + response.status);
             }
+            loadCart();
             return response.json();
         })
         .then(data => {
-            console.log('Resposta do backend:', data);
             return fetch('./cart-itens');
         })
         .then(response => {

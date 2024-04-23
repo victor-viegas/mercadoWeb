@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.DAO.UserDAO;
 import model.bean.UserDTO;
 
@@ -34,7 +35,11 @@ public class UserController extends HttpServlet {
                 dispatcher.forward(request, response);
                 break;
             }
-                        case "/login": {
+            case "/login": {
+                String userId = request.getParameter("userId");
+                HttpSession session = request.getSession();
+                session.setAttribute("userId", userId);
+                
                 String path = "/WEB-INF/jsp/index.jsp";
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(path);
                 dispatcher.forward(request, response);
@@ -75,7 +80,7 @@ public class UserController extends HttpServlet {
         objUser.setUser(request.getParameter("user"));
         objUser.setPassword(request.getParameter("password"));
         objUserDao.insertUser(objUser);
-        String path = "/WEB-INF/jsp/index.jsp";
+        String path = "/WEB-INF/jsp/login.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(path);
         dispatcher.forward(request, response);
     }
