@@ -43,13 +43,13 @@ public class OrderDAO {
     }
 
     public void insertOrder(OrderDTO objOrder) {
-        String sql = "INSERT INTO pedidos (usuario_id, metodo_pagamento, valor_total, data_hora) VALUES (?, ?, ?, ?, NOW())";
+        String sql = "INSERT INTO pedidos (usuario_id2, metodo_pagamento, valor_total, data_hora) VALUES (?, ?, ?, NOW())";
         try {
             Connection connection = ConnectionDB.connect();
             PreparedStatement stmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             stmt.setInt(1, objOrder.getUserId());
-            stmt.setString(3, objOrder.getMethodPayment());
-            stmt.setFloat(4, objOrder.getTotalPrice());
+            stmt.setString(2, objOrder.getMethodPayment());
+            stmt.setDouble(3, objOrder.getTotalPrice());
 
             stmt.executeUpdate();
             ResultSet generatedKeys = stmt.getGeneratedKeys();

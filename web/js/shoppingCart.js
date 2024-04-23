@@ -15,7 +15,6 @@ cartButtonClose.addEventListener('click', toggleMenu);
 function createCartCard(cartItens) {
     const cardItem = document.createElement('li');
     const totalPrice = cartItens.priceUnitary * cartItens.quantity;
-    console.log(cartItens.image)
     cardItem.innerHTML = `
         <section class="item-cart" id="${cartItens.idProduct}">
             <div class="image-cart">
