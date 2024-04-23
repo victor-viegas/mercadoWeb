@@ -9,7 +9,7 @@
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/128/14512/14512231.png">
+        <link rel="icon" type="image/x-icon" href="./assets/cesta.gif">
         <link rel="stylesheet" href="./styles/cardProduct.css">
         <link rel="stylesheet" href="./styles/header.css">
         <link rel="stylesheet" href="./styles/shoppingCart.css">
@@ -19,7 +19,11 @@
     <body>
         <header>
             <div class="container-header d-flex">
-                <div class="logo-container"></div>
+                <div class="logo-container">
+                    <a href="./home">
+                        <img src="./assets/cesta.gif" alt="logo">
+                    </a>
+                </div>
                 <div class="input-container">
                     <input type="text" class="form-control" id="inputSearch" name="search">
                     <button><i class="fa-solid fa-magnifying-glass"></i></button>
