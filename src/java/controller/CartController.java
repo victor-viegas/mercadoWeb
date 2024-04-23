@@ -6,8 +6,6 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.util.List;
 import javax.json.Json;
-import javax.json.JsonArray;
-import javax.json.JsonNumber;
 import javax.json.JsonString;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

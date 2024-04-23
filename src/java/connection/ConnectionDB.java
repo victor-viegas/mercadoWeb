@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class ConnectionDB {
-
     private static final String url = "jdbc:mysql://localhost:3306/mercadoWeb";
     private static final String user = "root";
     private static final String password = "";
