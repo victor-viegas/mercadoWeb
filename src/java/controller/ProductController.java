@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.DAO.ProductDAO;
 import model.bean.ProductDTO;
 
-@WebServlet(name = "ProductController", urlPatterns = {"/category-product", "/product","/list-products"})
+@WebServlet(name = "ProductController", urlPatterns = {"/category-product", "/product","/product-item", "/list-products"})
 @MultipartConfig
 public class ProductController extends HttpServlet {
 
@@ -38,18 +38,25 @@ public class ProductController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
-        String url = request.getServletPath();
-        if(url.equals("/list-products")){
-            List<ProductDTO> products = objProductDao.read();
 
+        String url = request.getServletPath();
+        if (url.equals("/list-products")) {
+            List<ProductDTO> products = objProductDao.read();
             Gson gson = new Gson();
             String json = gson.toJson(products);
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
-            response.getWriter().write(json);  
+            response.getWriter().write(json);
+        } else if (url.equals("/product-item")) {
+            int idProduct = Integer.parseInt(request.getParameter("id"));
+            List<ProductDTO> products = objProductDao.readProduct(idProduct);
+            Gson gson = new Gson();
+            String json = gson.toJson(products);
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(json);
         }
-        
+
     }
 
     @Override

@@ -14,7 +14,6 @@
         <link rel="stylesheet" href="./styles/productPage.css">
         <title>Produto</title>
     </head>
-
     <body>
         <header>
             <div class="container-header d-flex">
@@ -79,23 +78,6 @@
         </header>
         <main>
             <section class="container">
-                <article>
-                    <div class="image-container">
-                        <img src="https://mercado.carrefour.com.br/_next/image?url=https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F19771846%2Fcoca-cola-sem-acucar-15-litros-1.jpg%3Fv%3D637610904787270000&w=384&q=75"
-                            alt="">
-                    </div>
-                    <aside>
-                        <header>
-                            <h1>Refrigerante Coca-Cola Sem Açúcar 1,5L</h1>
-                        </header>
-                        <section class="d-flex justify-content-between align-items-center">
-                            <div class="prices">
-                                <span>R$ 6,79</span>
-                            </div>
-                            <a href="#" class="btn btn-success">ADICIONAR AO CARRINHO</a>
-                        </section>
-                    </aside>
-                </article>
             </section>
         </main>
     </body>
@@ -110,5 +92,5 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
     <script src="./js/shoppingCart.js"></script>
-
+    <script src="./js/productPage.js"></script>
     </html>

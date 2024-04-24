@@ -83,7 +83,6 @@
             <a href="./register-user">CADASTRO</a>
             <a href="./login-user">LOGIN</a>
             <a href="./category-product">CATEGORIA</a>
-            <a href="./product">PRODUTO</a>
             <div class="section-best-day">
                 <h2>Destaque da Semana <i class="fa-solid fa-fire" style="color: #ff0000;"></i></h2>
                 <div class="c-carousel c-carousel--simple">
@@ -112,5 +111,4 @@
     <script src="./js/cardCarousel.js"></script>
     <script src="./js/products.js"></script>
     <script src="./js/shoppingCart.js"></script>
-
     </html>
