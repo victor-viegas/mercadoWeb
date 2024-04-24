@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@media(min-width: 991px) {
+    .container-box {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box {
+        grid-template-columns: 1fr 1fr;
+        box-shadow: 0px 0px 6px 2px rgba(110, 110, 110, 0.653);
+        border-radius: 10px;
+        width: 80vw;
+        height: 55vh;
+    }
+
+    .box::after {
+        content: " ";
+        height: 55vh;
+        width: 1px;
+        box-shadow: 0px 0px 3px 1px rgba(110, 110, 110, 0.653);
+        position: absolute;
+        z-index: 1;
+        transform: translateX(40vw);
+    }
+
+    .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .input-group {
+        justify-content: center;
+    }
+
+    .form-container input {
+        max-width: 350px;
+    }
+
+    .form-container h1 {
+        text-align: center;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .btn-google:hover {
+        background-color: rgb(230, 230, 230);
+        box-shadow: 0px 0px 1px 1px rgba(133, 133, 133, 0.481);
+    }
+
+    .btn-facebook:hover {
+        background-color: rgb(230, 230, 230);
+        box-shadow: 0px 0px 1px 1px rgba(133, 133, 133, 0.481);
+    }
+
+    .btn-google {
+        border: none;
+        width: 150px;
+        height: 40px;
+        border-radius: 10px;
+        transition: .3s ease-in;
+    }
+
+    .btn-google i {
+        font-size: 25px;
+        color: rgb(255, 0, 0);
+    }
+
+    .btn-facebook {
+        border: none;
+        width: 150px;
+        height: 40px;
+        border-radius: 10px;
+        transition: .3s ease-in;
+    }
+
+    .btn-facebook i {
+        font-size: 25px;
+        color: rgb(38, 0, 255);
+    }
+
+    .button-enter {
+        min-width: 389px;
+    }
+}
