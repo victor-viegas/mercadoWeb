@@ -18,7 +18,7 @@ function createProductCard(product) {
                     </div>
                 </a>
                     <div class="btn-container d-flex justify-content-center m-3">
-                        <button class="btn btn-success" onclick="addToCart(${product.idProduct}, '${product.name}', ${product.price},'${base64Image}')">Adicionar ao carrinho</button>
+                        <button class="btn btn-info" onclick="addToCart(${product.idProduct}, '${product.name}', ${product.price},'${base64Image}')">Adicionar ao carrinho</button>
                     </div>
                 </div>
         </div>
