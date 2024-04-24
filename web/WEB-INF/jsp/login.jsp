@@ -10,6 +10,7 @@
         <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/128/14512/14512231.png">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles/login.css">
         <title>Login</title>
     </head>
 
@@ -17,26 +18,41 @@
         <main>
             <div class="notifications"></div>
             <div>
-                <h1>LOGIN</h1>
-                <form action="login" name="frmLogin">
-                    <div class="container">
-                        <div class="input-group mb-3 z-index-0">
-                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user"
-                                    style="color: #2e2e2e;"></i></span>
-                            <input type="text" name="user" class="form-control" placeholder="Nome de Usuario"
-                                aria-label="Username" aria-describedby="basic-addon1">
+                <div class="container-box">
+                    <div class="box d-grid">
+                        <div class="image-container">
+                            <img src="./assets/cesta.gif" alt="gif cesta">
                         </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-lock"
-                                    style="color: #404040;"></i></span>
-                            <input type="password" name="password" class="form-control" placeholder="Senha"
-                                aria-label="Password" aria-describedby="basic-addon1">
+                        <div class="form-container">
+                            <h1>LOGIN</h1>
+                            <form action="login" name="frmLogin">
+                                <div class="container">
+                                    <div class="input-group mb-3 z-index-0">
+                                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user"
+                                                style="color: #2e2e2e;"></i></span>
+                                        <input type="text" name="user" class="form-control"
+                                            placeholder="Nome de Usuario" aria-label="Username"
+                                            aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-lock"
+                                                style="color: #404040;"></i></span>
+                                        <input type="password" name="password" class="form-control" placeholder="Senha"
+                                            aria-label="Password" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <input type="button" class="button-enter btn btn-dark" value="ENTRAR" onclick="validate()">
+                                    </divbutton-enter>
+                            </form>
+                        </div>
+                        <div class="buttons">
+                            <button class="btn-google"><i class="fa-brands fa-google"></i></button>
+                            <button class="btn-facebook"><i class="fa-brands fa-facebook"></i></button>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-center">
-                        <input type="button" class="btn btn-dark" value="ENTRAR" onclick="validate()">
-                        </divbutton-enter>
-                </form>
+                </div>
+
         </main>
 
     </body>
