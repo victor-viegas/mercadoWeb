@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="./styles/productPage.css">
         <title>Produto</title>
     </head>
+
     <body>
         <header>
             <div class="container-header d-flex">
@@ -27,7 +28,13 @@
                     <button><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
                 <div class="user-container">
-                    <button><i class="fa-solid fa-user"></i></button>
+                    <button id="user-button-open"><i class="fa-solid fa-user"></i></button>
+                    <div class="box">
+                        <ul>
+                            <li><a href="./login-user">Entre</a></li>
+                            <li><a href="./register-user">Cadastre-se</a></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="cart-container">
                     <button id="cart-button-open"><i class="fa-solid fa-cart-shopping"></i></button>
@@ -36,7 +43,7 @@
             <div class="category-header">
                 <nav>
                     <ul class="category d-flex">
-                        <li><a href="#">Ver todas as categorias</a></li>
+                        <li><a href="./category-product">Ver todas as categorias</a></li>
                         <li><a href="#">Ofertas</a></li>
                         <li><a href="#">Saudável</a></li>
                         <li><a href="#">Hortifrúti</a></li>
@@ -75,6 +82,7 @@
                     </footer>
                 </div>
             </div>
+
         </header>
         <main>
             <section class="container">
@@ -93,4 +101,5 @@
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
     <script src="./js/shoppingCart.js"></script>
     <script src="./js/productPage.js"></script>
+
     </html>

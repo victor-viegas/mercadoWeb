@@ -30,6 +30,12 @@
                 </div>
                 <div class="user-container">
                     <button id="user-button-open"><i class="fa-solid fa-user"></i></button>
+                    <div class="box">
+                        <ul>
+                            <li><a href="./login-user">Entre</a></li>
+                            <li><a href="./register-user">Cadastre-se</a></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="cart-container">
                     <button id="cart-button-open"><i class="fa-solid fa-cart-shopping"></i></button>
@@ -38,7 +44,7 @@
             <div class="category-header">
                 <nav>
                     <ul class="category d-flex">
-                        <li><a href="#">Ver todas as categorias</a></li>
+                        <li><a href="./category-product">Ver todas as categorias</a></li>
                         <li><a href="#">Ofertas</a></li>
                         <li><a href="#">Saudável</a></li>
                         <li><a href="#">Hortifrúti</a></li>
@@ -49,14 +55,10 @@
                     </ul>
                 </nav>
             </div>
-            <div class="user-box">
-                <div class="box">
-                </div>
-            </div>
             <div class="container-cart-shopping">
                 <div id="shoppingCart">
                     <header class="header-cart">
-                        <button class="btn btn-outline-success" id="cart-button-close"><i
+                        <button class="btn btn-outline-info" id="cart-button-close"><i
                                 class="fa-solid fa-xmark text-light"></i></button>
                         <div class="text-light">Carrinho(<span id="cart-itens-qtd">0</span>)</div>
                     </header>
@@ -84,9 +86,6 @@
 
         </header>
         <main>
-            <a href="./register-user">CADASTRO</a>
-            <a href="./login-user">LOGIN</a>
-            <a href="./category-product">CATEGORIA</a>
             <div class="section-best-day">
                 <h2>Destaque da Semana <i class="fa-solid fa-fire" style="color: #ff0000;"></i></h2>
                 <div class="c-carousel c-carousel--simple">
@@ -115,4 +114,5 @@
     <script src="./js/cardCarousel.js"></script>
     <script src="./js/products.js"></script>
     <script src="./js/shoppingCart.js"></script>
+
     </html>
