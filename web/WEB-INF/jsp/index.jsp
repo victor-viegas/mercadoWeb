@@ -29,7 +29,7 @@
                     <button><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
                 <div class="user-container">
-                    <button><i class="fa-solid fa-user"></i></button>
+                    <button id="user-button-open"><i class="fa-solid fa-user"></i></button>
                 </div>
                 <div class="cart-container">
                     <button id="cart-button-open"><i class="fa-solid fa-cart-shopping"></i></button>
@@ -48,6 +48,10 @@
                         <li><a href="#">Petshop</a></li>
                     </ul>
                 </nav>
+            </div>
+            <div class="user-box">
+                <div class="box">
+                </div>
             </div>
             <div class="container-cart-shopping">
                 <div id="shoppingCart">

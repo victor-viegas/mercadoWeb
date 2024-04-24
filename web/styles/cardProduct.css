@@ -17,6 +17,8 @@
 .card-body h5 {
     text-align: center;
     font-size: 17px;
+    overflow-y: hidden;
+    max-height: 40px;
 }
 
 .card-body .name-product {

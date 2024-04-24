@@ -16,11 +16,11 @@ function createProductCard(product) {
                     <div class="price d-flex justify-content-center">
                         <span class="value">R$ ${product.price}</span>
                     </div>
+                </a>
                     <div class="btn-container d-flex justify-content-center m-3">
                         <button class="btn btn-success" onclick="addToCart(${product.idProduct}, '${product.name}', ${product.price},'${base64Image}')">Adicionar ao carrinho</button>
                     </div>
                 </div>
-            </a>
         </div>
     `;
     return card;

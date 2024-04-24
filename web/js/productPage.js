@@ -19,12 +19,51 @@ function createProduct(product) {
                 <div class="prices">
                     <span>R$ ${product.price}</span>
                 </div>
-                <a href="#" class="btn btn-success">ADICIONAR AO CARRINHO</a>
+                <a href="#" class="btn btn-success" onclick="addToCart(${product.idProduct}, '${product.name}', ${product.price},'${base64Image}')">ADICIONAR AO CARRINHO</a>
             </section>
         </aside>
     `;
 
     return card;
+}
+// Envia uma solicitação para o backend com os dados do produto
+function addToCart(productId, productName, productPrice, productImage) {
+    const data = {
+        productId: productId,
+        productName: productName,
+        productPrice: productPrice,
+        productImage: productImage,
+        productQtd: 1
+    };
+    fetch('./add-product-cart', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro na solicitação: ' + response.status);
+            }
+            loadCart();
+            return response.json();
+        })
+        .then(data => {
+            return fetch('./cart-itens');
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao obter dados dos produtos');
+            }
+            return response.json();
+        })
+        .then(data => {
+            loadCartProduct(data);
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+        });
 }
 
 // Função para converter um array de bytes em uma string Base64

@@ -64,6 +64,10 @@ function loadCartProduct(cartItens) {
 }
 //envia solicitação com a nova quantidade do item do carrinho de compra
 function sendQtd(productId, quantity) {
+    if (quantity <= 0){
+        deleteItem(productId);
+        return false;
+    }
     const data = {
         productId: productId,
         productQtd: quantity
